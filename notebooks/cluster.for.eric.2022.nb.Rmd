@@ -1,0 +1,191 @@
+---
+title: "clutsering for Eric"
+output: html_notebook
+---
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(fig.width = 8, collapse = T)
+knitr::opts_chunk$set(message = F)
+knitr::opts_knit$set(root.dir = '.')
+```
+
+# Setup:
+## load dependencies
+```{r}
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(ggsci)
+  library(ggpubr)
+  library(ggsignif)
+  library(ggthemes) 
+  library(ggrepel)
+  library(ggforce)
+  library(extrafont)
+  library(ggrepel)
+  library(viridis)
+  library(patchwork)
+  library(matrixStats)
+})
+suppressMessages(loadfonts())
+```
+## setting ggplot theme
+```{r}
+base_size = 10
+theme_set(theme_foundation(base_size = base_size,
+                           base_family = 'Helvetica') + 
+            theme(plot.title = element_blank(),
+                panel.background = element_rect(colour = NA),
+                plot.background = element_rect(colour = NA),
+                panel.border = element_rect(colour = NA), 
+                axis.line = element_line(), 
+                axis.line.x = NULL, 
+                axis.line.y = NULL, 
+                axis.text = element_text(size = rel(0.95)), 
+                axis.text.x = element_text(margin = margin(t = 0.8 * base_size/4)), 
+                axis.text.x.top = 
+                  element_text(margin = margin(b = 0.8 * base_size/4), vjust = 0), 
+                axis.text.y = 
+                  element_text(margin = margin(r = 0.5 * base_size/4), hjust = 1), 
+                axis.text.y.right = 
+                  element_text(margin = margin(l = 0.5 * base_size/4), hjust = 0), 
+                axis.ticks = element_line(), 
+                axis.ticks.length = 
+                  unit(base_size/2.5, "pt"), axis.ticks.length.x = NULL, 
+                axis.ticks.length.x.top = NULL, axis.ticks.length.x.bottom = NULL, 
+                axis.ticks.length.y = NULL, axis.ticks.length.y.left = NULL, 
+                axis.ticks.length.y.right = NULL,
+                strip.text = element_text(size = rel(0.95), face = 'bold'),
+                strip.background = element_blank(),
+                legend.key.size= unit(0.08, "in"),
+                legend.spacing = unit(0, "in"),
+                legend.key = element_rect(colour = NA),
+                legend.title = element_text(face="italic"),
+                legend.text = element_text(face = 'bold'),
+                legend.justification = c("right", "top"),
+                legend.box.just = "right",
+                legend.margin = margin(6, 6, 6, 6),
+                plot.margin=margin(0.04,
+                                   0.04,
+                                   0.04,
+                                   0.04,
+                                   unit = "in"),
+                # legend.margin = margin(-0.04,
+                #                    -0.02,
+                #                    0.08,
+                #                    0.02,
+                #                    unit = "in"),
+                legend.box.spacing = unit(-0.02, 'in'),
+                panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank()
+          ))
+```
+## load data
+```{r}
+load('../data/211129_chromvar_pros/filtered_counts_211129.Rdata')
+
+SummarizedExperiment::colData(peak_counts_filtered_211129) %>% 
+  as.data.frame() %>% 
+  rownames_to_column('sample') -> meta_data.df
+
+SummarizedExperiment::assay(peak_counts_filtered_211129, 'counts') %>% 
+  as.matrix() %>% 
+  as.data.frame() -> counts.df
+```
+
+# Analysis:
+## PCA
+```{r}
+
+counts_sd <- apply(counts.df, 1, sd)
+counts_zero_sd <- counts.df[counts_sd!=0, ]
+non_zero_pca <- prcomp(counts_zero_sd %>% t() %>% as.data.frame(), 
+                       center = T, scale. = T, rank. = 50)
+
+summary(non_zero_pca)
+pcs.of.interest <- apply(non_zero_pca$x, 2, var)
+pcs.props <-  pcs.of.interest/sum(pcs.of.interest)
+cumsum(pcs.props)[c(1,2)]
+as.data.frame(pcs.props) %>% 
+  rownames_to_column('pc') %>% 
+  mutate(pc = as.numeric(sub('PC', '', pc))) %>% 
+  ggplot(aes(pc, pcs.props)) + 
+  geom_col()
+
+# convert output to dataframe
+pca.out <- 
+  as.data.frame(non_zero_pca$x) %>% 
+  rownames_to_column('sample') %>% 
+  merge(meta_data.df, by = 'sample')
+
+# summarize PC contributions
+pca.out.summary <- 
+  as.data.frame(summary(non_zero_pca)$importance) %>% 
+  rownames_to_column('metric') %>% 
+  gather(pc, value, -metric) %>% 
+  spread(metric, value)
+
+# plot PC1 and PC2
+pca.out %>% 
+  ggplot(aes(PC1, PC2,
+             color = celltype)) +
+  geom_point(size = rel(2)) + 
+  xlab(paste('PC1', round(cumsum(pcs.props)[1], digits = 3), sep = ' ')) +
+  ylab(paste('PC2', round(cumsum(pcs.props)[2] - cumsum(pcs.props)[1], 
+                          digits = 3), sep = ' ')) +
+  geom_vline(xintercept = 0, linetype = 'dotted', alpha = 0.3, size = 0.25) +
+  geom_hline(yintercept = 0, linetype = 'dotted', alpha = 0.3, size = 0.25) 
+
+pca.out %>% 
+  ggplot(aes(PC2, PC3,
+             color = celltype)) +
+  geom_point(size = rel(2)) + 
+  xlab(paste('PC2', round(cumsum(pcs.props)[2] - cumsum(pcs.props)[1], 
+                          digits = 3), sep = ' ')) +
+  ylab(paste('PC3', round(cumsum(pcs.props)[3] - cumsum(pcs.props)[2], 
+                          digits = 3), sep = ' ')) +
+  geom_vline(xintercept = 0, linetype = 'dotted', alpha = 0.3, size = 0.25) +
+  geom_hline(yintercept = 0, linetype = 'dotted', alpha = 0.3, size = 0.25) 
+
+```
+## UMAP
+```{r}
+# install.packages('uwot')
+library(uwot)
+counts_sd <- apply(counts.df, 1, sd)
+counts_zero_sd <- counts.df[counts_sd!=0, ]
+
+set.seed(123)
+non_zero_umap <- 
+  uwot::umap(counts_zero_sd %>% t() %>% as.data.frame(), 
+             n_neighbors = 3)
+umap_from_pca <- 
+  uwot::umap(pca.out %>% 
+               select(-celltype, -depth) %>% 
+               column_to_rownames('sample'),
+             n_neighbors = 3)
+
+umap.out <- as.data.frame(non_zero_umap) %>% 
+  rownames_to_column('sample') %>% 
+  merge(meta_data.df, by = 'sample')
+
+
+
+pca_umap.out <- as.data.frame(umap_from_pca) %>% 
+  rownames_to_column('sample') %>% 
+  merge(meta_data.df, by = 'sample')
+
+pca_umap.out %>% 
+  ggplot(aes(V1, V2,
+             color = celltype)) +
+  geom_point(size = rel(2)) + 
+  geom_vline(xintercept = 0, linetype = 'dotted', alpha = 0.3, size = 0.25) +
+  geom_hline(yintercept = 0, linetype = 'dotted', alpha = 0.3, size = 0.25) 
+
+umap.out %>% 
+  ggplot(aes(V1, V2,
+             color = celltype)) +
+  geom_point(size = rel(2)) + 
+  geom_vline(xintercept = 0, linetype = 'dotted', alpha = 0.3, size = 0.25) +
+  geom_hline(yintercept = 0, linetype = 'dotted', alpha = 0.3, size = 0.25)
+```
+
+
