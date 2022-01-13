@@ -1,0 +1,1548 @@
+(base) bash-4.2$ bash chromvar.sh 
+chromvar.sh: line 1: R34script: command not found
+chromvar.sh: line 2: R34script: command not found
+(base) bash-4.2$ bas[K[K[Ksource ~/.bashrc
+(base) bash-4.2$ source ~/.bashrcbash chromvar.sh 
+chromvar.sh: line 1: R34script: command not found
+chromvar.sh: line 2: R34script: command not found
+(base) bash-4.2$ which R34x[Kscript
+which: no R34script in (/public/groups/forsberglab/tools/ATAC-seq:/public/groups/forsberglab/tools/meme/bin:/public/groups/forsberglab/tools/meme/libexec/meme-5.1.1:/public/groups/forsberglab/tools/subread-2/bin:/public/home/ewmartin/bin/sratoolkit.2.10.2-centos_linux64/bin:/public/groups/forsberglab/tools/bedtools2/bin:/public/groups/forsberglab/tools/Genrich-0.6:/public/groups/forsberglab/tools/homer/bin:/public/home/ewmartin/bin:/public/groups/forsberglab/tools/jdk-17.0.1/bin:/public/groups/forsberglab/tools/ATAC-seq:/public/groups/forsberglab/tools/meme/bin:/public/groups/forsberglab/tools/meme/libexec/meme-5.1.1:/public/groups/forsberglab/tools/subread-2/bin:/public/home/ewmartin/bin/sratoolkit.2.10.2-centos_linux64/bin:/public/groups/forsberglab/tools/bedtools2/bin:/public/groups/forsberglab/tools/Genrich-0.6:/public/groups/forsberglab/tools/homer/bin:/public/home/ewmartin/bin:/public/groups/forsberglab/tools/jdk-17.0.1/bin:/public/groups/forsberglab/tools/miniconda3/bin:/public/groups/forsberglab/tools/miniconda3/condabin:/public/groups/forsberglab/tools/ATAC-seq:/public/groups/forsberglab/tools/meme/bin:/public/groups/forsberglab/tools/meme/libexec/meme-5.1.1:/public/groups/forsberglab/tools/subread-2/bin:/public/home/ewmartin/bin/sratoolkit.2.10.2-centos_linux64/bin:/public/groups/forsberglab/tools/bedtools2/bin:/public/groups/forsberglab/tools/Genrich-0.6:/public/groups/forsberglab/tools/homer/bin:/public/home/ewmartin/bin:/public/groups/forsberglab/tools/jdk-17.0.1/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin:/opt/puppetlabs/bin:/opt/dell/srvadmin/bin)
+(base) bash-4.2$ which R34scriptbash chromvar.sh 
+chromvar.sh: line 4: R34script: command not found
+chromvar.sh: line 5: R34script: command not found
+(base) bash-4.2$ bash chromvar.sh 
+
+Loading required package: methods
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+Parsed with column specification:
+cols(
+  chr = [31mcol_character()[39m,
+  start = [32mcol_double()[39m,
+  end = [32mcol_double()[39m,
+  name = [31mcol_character()[39m,
+  score = [32mcol_double()[39m,
+  strand = [31mcol_character()[39m,
+  fc = [32mcol_double()[39m,
+  pval = [32mcol_double()[39m,
+  qval = [32mcol_double()[39m,
+  summit = [32mcol_double()[39m
+)
+GRanges object with 428426 ranges and 3 metadata columns:
+           seqnames               ranges strand |     score      qval
+              <Rle>            <IRanges>  <Rle> | <numeric> <numeric>
+       [1]     chr1   [4332190, 4332689]      * |       419   4.39160
+       [2]     chr1   [4332399, 4332898]      * |       419  12.18106
+       [3]     chr1   [4332406, 4332905]      * |       460  10.57160
+       [4]     chr1   [4416656, 4417155]      * |       584  23.91399
+       [5]     chr1   [4417782, 4418281]      * |       486  11.46668
+       ...      ...                  ...    ... .       ...       ...
+  [428422]     chrY [90740850, 90741349]      * |       783  27.97365
+  [428423]     chrY [90741152, 90741651]      * |       424   0.64668
+  [428424]     chrY [90741359, 90741858]      * |       424   6.05310
+  [428425]     chrY [90740872, 90741371]      * |       424  10.76508
+  [428426]     chrY [90740860, 90741359]      * |       435  11.77139
+                  name
+           <character>
+       [1]           .
+       [2]           .
+       [3]           .
+       [4]           .
+       [5]           .
+       ...         ...
+  [428422]           .
+  [428423]           .
+  [428424]           .
+  [428425]           .
+  [428426]           .
+  -------
+  seqinfo: 21 sequences from an unspecified genome; no seqlengths
+Error: unexpected string constant in:
+"inbam <-c(hsc1,hsc2,mpp1,mpp2,cmp1,cmp2,gmp1,gmp2,mep1,mep2,clp1,clp2,prob1,prob2,prot1,prot2)
+peak_counts <- getCounts(inbam, peaks, by_rg = FALSE, format = ""
+Execution halted
+Fatal error: cannot open file '211129_dev_cor.R': No such file or directory
+(base) bash-4.2$ R34
+
+R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(chromVAR)
+lic/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+gmp2 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+hsc1 <- "/public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam"
+hsc2 <- "/public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam"
+mep1 <- "/public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam"
+mep2 <- "/public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam"
+mpp1 <- "/public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam"
+mpp2 <- "/public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam"
+prob1 <- "/public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam"
+prob2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+prot2 <- "/public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+^C
+> library(chromVAR)
+
+> library(motifmatchr)
+> library(Matrix)
+> library(SummarizedExperiment)
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+> library(BiocParallel)
+> set.seed(2017)
+> register(MulticoreParam(8))
+> library(BSgenome.Mmusculus.UCSC.mm10)
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+> peakfile <-"/public/groups/forsberglab/atac_analysis/211129_chromvar_pros/idr_hsc_pros_211129_peaks_sorted.bed"
+> 
+> peaks <- readNarrowpeaks(peakfile, width = 500, non_overlapping = FALSE)
+Parsed with column specification:
+cols(
+  chr = [31mcol_character()[39m,
+  start = [32mcol_double()[39m,
+  end = [32mcol_double()[39m,
+  name = [31mcol_character()[39m,
+  score = [32mcol_double()[39m,
+  strand = [31mcol_character()[39m,
+  fc = [32mcol_double()[39m,
+  pval = [32mcol_double()[39m,
+  qval = [32mcol_double()[39m,
+  summit = [32mcol_double()[39m
+)
+|                                                                        |   0%|                                                                        |   0%|                                                                        |   0%|                                                                        |   1%|=                                                                       |   1%|=                                                                       |   1%|=                                                                       |   1%|=                                                                       |   2%|=                                                                       |   2%|=                                                                       |   2%|==                                                                      |   2%|==                                                                      |   2%|==                                                                      |   3%|==                                                                      |   3%|==                                                                      |   3%|==                                                                      |   3%|==                                                              |   4%    1 MB|==                                                              |   4%    1 MB|===                                                             |   4%    1 MB|===                                                             |   4%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   7%    1 MB|====                                                            |   7%    1 MB|====                                                            |   7%    1 MB|=====                                                           |   7%    1 MB|=====                                                           |   7%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|=======                                                         |  10%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    3 MB|=======                                                         |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  15%    3 MB|==========                                                      |  15%    3 MB|==========                                                      |  15%    3 MB|==========                                                      |  15%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  18%    4 MB|===========                                                     |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  19%    4 MB|============                                                    |  19%    4 MB|============                                                    |  19%    5 MB|============                                                    |  19%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  21%    5 MB|=============                                                   |  21%    5 MB|==============                                                  |  21%    5 MB|==============                                                  |  21%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|===============                                                 |  23%    5 MB|===============                                                 |  23%    5 MB|===============                                                 |  23%    6 MB|===============                                                 |  23%    6 MB|===============                                                 |  24%    6 MB|===============                                                 |  24%    6 MB|===============                                                 |  24%    6 MB|================                                                |  24%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  27%    6 MB|=================                                               |  27%    6 MB|=================                                               |  27%    7 MB|==================                                              |  27%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|====================                                            |  30%    7 MB|====================                                            |  31%    7 MB|====================                                            |  31%    7 MB|====================                                            |  31%    8 MB|====================                                            |  31%    8 MB|====================                                            |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|======================                                          |  33%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  35%    8 MB|=======================                                         |  35%    8 MB|=======================                                         |  35%    9 MB|=======================                                         |  35%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  38%    9 MB|========================                                        |  38%    9 MB|=========================                                       |  38%    9 MB|=========================                                       |  38%    9 MB|=========================                                       |  39%    9 MB|=========================                                       |  39%   10 MB|=========================                                       |  39%   10 MB|=========================                                       |  39%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  41%   10 MB|==========================                                      |  41%   10 MB|===========================                                     |  41%   10 MB|===========================                                     |  41%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|============================                                    |  43%   10 MB|============================                                    |  43%   11 MB|============================                                    |  43%   11 MB|============================                                    |  43%   11 MB|============================                                    |  44%   11 MB|============================                                    |  44%   11 MB|============================                                    |  44%   11 MB|=============================                                   |  44%   11 MB|=============================                                   |  44%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  47%   11 MB|==============================                                  |  47%   12 MB|==============================                                  |  47%   12 MB|===============================                                 |  47%   12 MB|===============================                                 |  47%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|=================================                               |  50%   12 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|===================================                             |  53%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  58%   14 MB|=====================================                           |  58%   14 MB|======================================                          |  58%   14 MB|======================================                          |  58%   14 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  61%   15 MB|=======================================                         |  61%   15 MB|=======================================                         |  61%   15 MB|========================================                        |  61%   15 MB|========================================                        |  61%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  64%   16 MB|=========================================                       |  64%   16 MB|=========================================                       |  64%   16 MB|==========================================                      |  64%   16 MB|==========================================                      |  64%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  67%   17 MB|===========================================                     |  67%   17 MB|===========================================                     |  67%   17 MB|============================================                    |  67%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  70%   17 MB|=============================================                   |  70%   17 MB|=============================================                   |  70%   17 MB|==============================================                  |  70%   17 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  73%   18 MB|===============================================                 |  73%   18 MB|===============================================                 |  73%   18 MB|================================================                |  73%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   19 MB|================================================                |  75%   19 MB|================================================                |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  78%   19 MB|==================================================              |  78%   19 MB|===================================================             |  78%   19 MB|===================================================             |  78%   20 MB|===================================================             |  78%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  81%   20 MB|====================================================            |  81%   20 MB|=====================================================           |  81%   20 MB|=====================================================           |  81%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   21 MB|=====================================================           |  82%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  84%   21 MB|======================================================          |  84%   21 MB|======================================================          |  84%   21 MB|=======================================================         |  84%   21 MB|=======================================================         |  84%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|========================================================        |  86%   21 MB|========================================================        |  86%   21 MB|========================================================        |  86%   22 MB|========================================================        |  86%   22 MB|========================================================        |  87%   22 MB|========================================================        |  87%   22 MB|========================================================        |  87%   22 MB|=========================================================       |  87%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  90%   22 MB|==========================================================      |  90%   22 MB|==========================================================      |  90%   23 MB|===========================================================     |  90%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  93%   23 MB|============================================================    |  93%   23 MB|============================================================    |  93%   23 MB|=============================================================   |  93%   23 MB|=============================================================   |  94%   23 MB|=============================================================   |  94%   23 MB|=============================================================   |  94%   24 MB|=============================================================   |  94%   24 MB|=============================================================   |  94%   24 MB|=============================================================   |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  98%   24 MB|=============================================================== |  98%   24 MB|================================================================|  98%   25 MB|================================================================|  98%   25 MB|================================================================|  98%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|=================================================================| 100%   25 MB
+> peaks
+GRanges object with 428426 ranges and 3 metadata columns:
+           seqnames               ranges strand |     score      qval
+              <Rle>            <IRanges>  <Rle> | <numeric> <numeric>
+       [1]     chr1   [4332190, 4332689]      * |       419   4.39160
+       [2]     chr1   [4332399, 4332898]      * |       419  12.18106
+       [3]     chr1   [4332406, 4332905]      * |       460  10.57160
+       [4]     chr1   [4416656, 4417155]      * |       584  23.91399
+       [5]     chr1   [4417782, 4418281]      * |       486  11.46668
+       ...      ...                  ...    ... .       ...       ...
+  [428422]     chrY [90740850, 90741349]      * |       783  27.97365
+  [428423]     chrY [90741152, 90741651]      * |       424   0.64668
+  [428424]     chrY [90741359, 90741858]      * |       424   6.05310
+  [428425]     chrY [90740872, 90741371]      * |       424  10.76508
+  [428426]     chrY [90740860, 90741359]      * |       435  11.77139
+                  name
+           <character>
+       [1]           .
+       [2]           .
+       [3]           .
+       [4]           .
+       [5]           .
+       ...         ...
+  [428422]           .
+  [428423]           .
+  [428424]           .
+  [428425]           .
+  [428426]           .
+  -------
+  seqinfo: 21 sequences from an unspecified genome; no seqlengths
+> clp1 <- "/public/groups/forsberglab/atac_libraries/clp/ATAC34_CLP_CFEM026_S9_R1_001.merged.nodup.bam"
+> clp2 <- "/public/groups/forsberglab/atac_libraries/clp/cfjk017_R1.trim.merged.nodup.bam"
+> cmp1 <- "/public/groups/forsberglab/atac_libraries/cmp/em013_cat_R1.trim.merged.nodup.bam"
+> cmp2 <- "/public/groups/forsberglab/atac_libraries/cmp/jk004_cat_R1.trim.merged.nodup.bam"
+> gmp1 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+> gmp2 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+> hsc1 <- "/public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam"
+> hsc2 <- "/public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam"
+> mep1 <- "/public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam"
+> mep2 <- "/public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam"
+> mpp1 <- "/public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam"
+> mpp2 <- "/public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam"
+> prob1 <- "/public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam"
+> prob2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
++ prot2 <- "/public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"[C[C[C[C[C[C[1P1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam[C[C[C[C[C[C2 <- "/public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> Q[Kq()
+Save workspace image? [y/n/c]: n
+(base) bash-4.2$ R34bash chromvar.sh 
+
+Loading required package: methods
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+Parsed with column specification:
+cols(
+  chr = [31mcol_character()[39m,
+  start = [32mcol_double()[39m,
+  end = [32mcol_double()[39m,
+  name = [31mcol_character()[39m,
+  score = [32mcol_double()[39m,
+  strand = [31mcol_character()[39m,
+  fc = [32mcol_double()[39m,
+  pval = [32mcol_double()[39m,
+  qval = [32mcol_double()[39m,
+  summit = [32mcol_double()[39m
+)
+GRanges object with 428426 ranges and 3 metadata columns:
+           seqnames               ranges strand |     score      qval
+              <Rle>            <IRanges>  <Rle> | <numeric> <numeric>
+       [1]     chr1   [4332190, 4332689]      * |       419   4.39160
+       [2]     chr1   [4332399, 4332898]      * |       419  12.18106
+       [3]     chr1   [4332406, 4332905]      * |       460  10.57160
+       [4]     chr1   [4416656, 4417155]      * |       584  23.91399
+       [5]     chr1   [4417782, 4418281]      * |       486  11.46668
+       ...      ...                  ...    ... .       ...       ...
+  [428422]     chrY [90740850, 90741349]      * |       783  27.97365
+  [428423]     chrY [90741152, 90741651]      * |       424   0.64668
+  [428424]     chrY [90741359, 90741858]      * |       424   6.05310
+  [428425]     chrY [90740872, 90741371]      * |       424  10.76508
+  [428426]     chrY [90740860, 90741359]      * |       435  11.77139
+                  name
+           <character>
+       [1]           .
+       [2]           .
+       [3]           .
+       [4]           .
+       [5]           .
+       ...         ...
+  [428422]           .
+  [428423]           .
+  [428424]           .
+  [428425]           .
+  [428426]           .
+  -------
+  seqinfo: 21 sequences from an unspecified genome; no seqlengths
+Error: unexpected string constant in:
+"inbam <-c(hsc1,hsc2,mpp1,mpp2,cmp1,cmp2,gmp1,gmp2,mep1,mep2,clp1,clp2,prob1,prob2,prot1,prot2)
+peak_counts <- getCounts(inbam, peaks, by_rg = FALSE, format = ""
+Execution halted
+Fatal error: cannot open file '211129_dev_cor.R': No such file or directory
+(base) bash-4.2$ bash chromvar.sh R34[Kbash chromvar.sh [2Pwhich R34scriptbash chromvar.sh R34[K
+
+R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(chromVAR)
+lic/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+gmp2 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+hsc1 <- "/public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam"
+hsc2 <- "/public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam"
+mep1 <- "/public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam"
+mep2 <- "/public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam"
+mpp1 <- "/public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam"
+mpp2 <- "/public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam"
+prob1 <- "/public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam"
+prob2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+prot2 <- "/public/groups/forsberglab/atac_libraries"/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+^[[A^[[A^[[A
+> library(motifmatchr)
+> library(Matrix)
+> library(SummarizedExperiment)
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+> library(BiocParallel)
+> set.seed(2017)
+> register(MulticoreParam(8))
+> library(BSgenome.Mmusculus.UCSC.mm10)
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+> 
+> peakfile <-"/public/groups/forsberglab/atac_analysis/211129_chromvar_pros/idr_hsc_pros_211129_peaks_sorted.bed"
+> 
+> peaks <- readNarrowpeaks(peakfile, width = 500, non_overlapping = FALSE)
+Parsed with column specification:
+cols(
+  chr = [31mcol_character()[39m,
+  start = [32mcol_double()[39m,
+  end = [32mcol_double()[39m,
+  name = [31mcol_character()[39m,
+  score = [32mcol_double()[39m,
+  strand = [31mcol_character()[39m,
+  fc = [32mcol_double()[39m,
+  pval = [32mcol_double()[39m,
+  qval = [32mcol_double()[39m,
+  summit = [32mcol_double()[39m
+)
+|                                                                        |   0%|                                                                        |   0%|                                                                        |   0%|                                                                        |   1%|=                                                                       |   1%|=                                                                       |   1%|=                                                                       |   1%|=                                                                       |   2%|=                                                                       |   2%|=                                                                       |   2%|==                                                                      |   2%|==                                                                      |   2%|==                                                                      |   3%|==                                                                      |   3%|==                                                                      |   3%|==                                                                      |   3%|==                                                              |   4%    1 MB|==                                                              |   4%    1 MB|===                                                             |   4%    1 MB|===                                                             |   4%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   7%    1 MB|====                                                            |   7%    1 MB|====                                                            |   7%    1 MB|=====                                                           |   7%    1 MB|=====                                                           |   7%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|=======                                                         |  10%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    3 MB|=======                                                         |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  15%    3 MB|==========                                                      |  15%    3 MB|==========                                                      |  15%    3 MB|==========                                                      |  15%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  18%    4 MB|===========                                                     |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  19%    4 MB|============                                                    |  19%    4 MB|============                                                    |  19%    5 MB|============                                                    |  19%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  21%    5 MB|=============                                                   |  21%    5 MB|==============                                                  |  21%    5 MB|==============                                                  |  21%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|===============                                                 |  23%    5 MB|===============                                                 |  23%    5 MB|===============                                                 |  23%    6 MB|===============                                                 |  23%    6 MB|===============                                                 |  24%    6 MB|===============                                                 |  24%    6 MB|===============                                                 |  24%    6 MB|================                                                |  24%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  27%    6 MB|=================                                               |  27%    6 MB|=================                                               |  27%    7 MB|==================                                              |  27%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|====================                                            |  30%    7 MB|====================                                            |  31%    7 MB|====================                                            |  31%    7 MB|====================                                            |  31%    8 MB|====================                                            |  31%    8 MB|====================                                            |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|======================                                          |  33%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  35%    8 MB|=======================                                         |  35%    8 MB|=======================                                         |  35%    9 MB|=======================                                         |  35%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  38%    9 MB|========================                                        |  38%    9 MB|=========================                                       |  38%    9 MB|=========================                                       |  38%    9 MB|=========================                                       |  39%    9 MB|=========================                                       |  39%   10 MB|=========================                                       |  39%   10 MB|=========================                                       |  39%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  41%   10 MB|==========================                                      |  41%   10 MB|===========================                                     |  41%   10 MB|===========================                                     |  41%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|============================                                    |  43%   10 MB|============================                                    |  43%   11 MB|============================                                    |  43%   11 MB|============================                                    |  43%   11 MB|============================                                    |  44%   11 MB|============================                                    |  44%   11 MB|============================                                    |  44%   11 MB|=============================                                   |  44%   11 MB|=============================                                   |  44%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  47%   11 MB|==============================                                  |  47%   12 MB|==============================                                  |  47%   12 MB|===============================                                 |  47%   12 MB|===============================                                 |  47%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|=================================                               |  50%   12 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|===================================                             |  53%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  58%   14 MB|=====================================                           |  58%   14 MB|======================================                          |  58%   14 MB|======================================                          |  58%   14 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  61%   15 MB|=======================================                         |  61%   15 MB|=======================================                         |  61%   15 MB|========================================                        |  61%   15 MB|========================================                        |  61%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  64%   16 MB|=========================================                       |  64%   16 MB|=========================================                       |  64%   16 MB|==========================================                      |  64%   16 MB|==========================================                      |  64%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  67%   17 MB|===========================================                     |  67%   17 MB|===========================================                     |  67%   17 MB|============================================                    |  67%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  70%   17 MB|=============================================                   |  70%   17 MB|=============================================                   |  70%   17 MB|==============================================                  |  70%   17 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  73%   18 MB|===============================================                 |  73%   18 MB|===============================================                 |  73%   18 MB|================================================                |  73%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   19 MB|================================================                |  75%   19 MB|================================================                |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  78%   19 MB|==================================================              |  78%   19 MB|===================================================             |  78%   19 MB|===================================================             |  78%   20 MB|===================================================             |  78%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  81%   20 MB|====================================================            |  81%   20 MB|=====================================================           |  81%   20 MB|=====================================================           |  81%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   21 MB|=====================================================           |  82%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  84%   21 MB|======================================================          |  84%   21 MB|======================================================          |  84%   21 MB|=======================================================         |  84%   21 MB|=======================================================         |  84%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|========================================================        |  86%   21 MB|========================================================        |  86%   21 MB|========================================================        |  86%   22 MB|========================================================        |  86%   22 MB|========================================================        |  87%   22 MB|========================================================        |  87%   22 MB|========================================================        |  87%   22 MB|=========================================================       |  87%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  90%   22 MB|==========================================================      |  90%   22 MB|==========================================================      |  90%   23 MB|===========================================================     |  90%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  93%   23 MB|============================================================    |  93%   23 MB|============================================================    |  93%   23 MB|=============================================================   |  93%   23 MB|=============================================================   |  94%   23 MB|=============================================================   |  94%   23 MB|=============================================================   |  94%   24 MB|=============================================================   |  94%   24 MB|=============================================================   |  94%   24 MB|=============================================================   |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  98%   24 MB|=============================================================== |  98%   24 MB|================================================================|  98%   25 MB|================================================================|  98%   25 MB|================================================================|  98%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|=================================================================| 100%   25 MB
+> peaks
+GRanges object with 428426 ranges and 3 metadata columns:
+           seqnames               ranges strand |     score      qval
+              <Rle>            <IRanges>  <Rle> | <numeric> <numeric>
+       [1]     chr1   [4332190, 4332689]      * |       419   4.39160
+       [2]     chr1   [4332399, 4332898]      * |       419  12.18106
+       [3]     chr1   [4332406, 4332905]      * |       460  10.57160
+       [4]     chr1   [4416656, 4417155]      * |       584  23.91399
+       [5]     chr1   [4417782, 4418281]      * |       486  11.46668
+       ...      ...                  ...    ... .       ...       ...
+  [428422]     chrY [90740850, 90741349]      * |       783  27.97365
+  [428423]     chrY [90741152, 90741651]      * |       424   0.64668
+  [428424]     chrY [90741359, 90741858]      * |       424   6.05310
+  [428425]     chrY [90740872, 90741371]      * |       424  10.76508
+  [428426]     chrY [90740860, 90741359]      * |       435  11.77139
+                  name
+           <character>
+       [1]           .
+       [2]           .
+       [3]           .
+       [4]           .
+       [5]           .
+       ...         ...
+  [428422]           .
+  [428423]           .
+  [428424]           .
+  [428425]           .
+  [428426]           .
+  -------
+  seqinfo: 21 sequences from an unspecified genome; no seqlengths
+> 
+> clp1 <- "/public/groups/forsberglab/atac_libraries/clp/ATAC34_CLP_CFEM026_S9_R1_001.merged.nodup.bam"
+> clp2 <- "/public/groups/forsberglab/atac_libraries/clp/cfjk017_R1.trim.merged.nodup.bam"
+> cmp1 <- "/public/groups/forsberglab/atac_libraries/cmp/em013_cat_R1.trim.merged.nodup.bam"
+> cmp2 <- "/public/groups/forsberglab/atac_libraries/cmp/jk004_cat_R1.trim.merged.nodup.bam"
+> gmp1 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+> gmp2 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+> hsc1 <- "/public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam"
+> hsc2 <- "/public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam"
+> mep1 <- "/public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam"
+> mep2 <- "/public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam"
+> mpp1 <- "/public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam"
+> mpp2 <- "/public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam"
+> prob1 <- "/public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam"
+> prob2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
++ prot2 <- "/public/groups/forsberglab/atac_libraries"/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+Error: unexpected string constant in:
+"prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+prot2 <- "/public/groups/forsberglab/atac_libraries"/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam""
+> prot2 <- "/public/groups/forsberglab/atac_libraries"/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"[C[C[C[C[C[C[2P1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam[C[C[C[C[Cb2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prob1 <- "/public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam"
+> prob2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prot2 <- "/public/groups/forsberglab/atac_libraries"/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
++ 
+> prob1 <- "/public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam"
+> prob2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prot2 <- "/public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> inbam <-c(hsc1,hsc2,mpp1,mpp2,cmp1,cmp2,gmp1,gmp2,mep1,mep2,clp1,clp2,prob1,prob2,prot1,prot2)
+> peak_counts <- getCounts(inbam, peaks, by_rg = FALSE, format = "bam", paired = TRUE,
++ colData = DataFrame(celltype = c("HSC","HSC","MPP","MPP","CMP","CMP","GMP","GMP","MEP","MEP","CLP","CLP","ProB","ProB","ProT","ProT")))
+Reading in file: /public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam
+^C
+> q()
+Save workspace image? [y/n/c]: n
+(base) bash-4.2$ R34bash chromvar.sh 
+
+Loading required package: methods
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+Parsed with column specification:
+cols(
+  chr = [31mcol_character()[39m,
+  start = [32mcol_double()[39m,
+  end = [32mcol_double()[39m,
+  name = [31mcol_character()[39m,
+  score = [32mcol_double()[39m,
+  strand = [31mcol_character()[39m,
+  fc = [32mcol_double()[39m,
+  pval = [32mcol_double()[39m,
+  qval = [32mcol_double()[39m,
+  summit = [32mcol_double()[39m
+)
+GRanges object with 428426 ranges and 3 metadata columns:
+           seqnames               ranges strand |     score      qval
+              <Rle>            <IRanges>  <Rle> | <numeric> <numeric>
+       [1]     chr1   [4332190, 4332689]      * |       419   4.39160
+       [2]     chr1   [4332399, 4332898]      * |       419  12.18106
+       [3]     chr1   [4332406, 4332905]      * |       460  10.57160
+       [4]     chr1   [4416656, 4417155]      * |       584  23.91399
+       [5]     chr1   [4417782, 4418281]      * |       486  11.46668
+       ...      ...                  ...    ... .       ...       ...
+  [428422]     chrY [90740850, 90741349]      * |       783  27.97365
+  [428423]     chrY [90741152, 90741651]      * |       424   0.64668
+  [428424]     chrY [90741359, 90741858]      * |       424   6.05310
+  [428425]     chrY [90740872, 90741371]      * |       424  10.76508
+  [428426]     chrY [90740860, 90741359]      * |       435  11.77139
+                  name
+           <character>
+       [1]           .
+       [2]           .
+       [3]           .
+       [4]           .
+       [5]           .
+       ...         ...
+  [428422]           .
+  [428423]           .
+  [428424]           .
+  [428425]           .
+  [428426]           .
+  -------
+  seqinfo: 21 sequences from an unspecified genome; no seqlengths
+Reading in file: /public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/cmp/em013_cat_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/cmp/jk004_cat_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/clp/ATAC34_CLP_CFEM026_S9_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/clp/cfjk017_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+Error in `rownames<-`(`*tmp*`, value = c("jk009_allcat_R1.merged.nodup.bam",  : 
+  duplicate rownames not allowed
+Calls: getCounts ... SummarizedExperiment -> .local -> rownames<- -> rownames<-
+Execution halted
+
+Loading required package: methods
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+Error in readChar(con, 5L, useBytes = TRUE) : cannot open the connection
+Calls: load -> readChar
+In addition: Warning message:
+In readChar(con, 5L, useBytes = TRUE) :
+  cannot open compressed file '/public/groups/forsberglab/atac_analysis/211129_chromvar_pros/filtered_counts_211129.Rdata', probable reason 'No such file or directory'
+Execution halted
+(base) bash-4.2$ R34
+
+R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(chromVAR)
+lic/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+gmp2 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+hsc1 <- "/public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam"
+hsc2 <- "/public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam"
+mep1 <- "/public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam"
+mep2 <- "/public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam"
+mpp1 <- "/public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam"
+mpp2 <- "/public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam"
+prob1 <- "/public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam"
+prob2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+prot2 <- "/public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+
+> library(motifmatchr)
+> library(Matrix)
+> library(SummarizedExperiment)
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+> library(BiocParallel)
+> set.seed(2017)
+> register(MulticoreParam(8))
+> library(BSgenome.Mmusculus.UCSC.mm10)
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+> 
+> peakfile <-"/public/groups/forsberglab/atac_analysis/211129_chromvar_pros/idr_hsc_pros_211129_peaks_sorted.bed"
+> 
+> peaks <- readNarrowpeaks(peakfile, width = 500, non_overlapping = FALSE)
+Parsed with column specification:
+cols(
+  chr = [31mcol_character()[39m,
+  start = [32mcol_double()[39m,
+  end = [32mcol_double()[39m,
+  name = [31mcol_character()[39m,
+  score = [32mcol_double()[39m,
+  strand = [31mcol_character()[39m,
+  fc = [32mcol_double()[39m,
+  pval = [32mcol_double()[39m,
+  qval = [32mcol_double()[39m,
+  summit = [32mcol_double()[39m
+)
+|                                                                        |   0%|                                                                        |   0%|                                                                        |   0%|                                                                        |   1%|=                                                                       |   1%|=                                                                       |   1%|=                                                                       |   1%|=                                                                       |   2%|=                                                                       |   2%|=                                                                       |   2%|==                                                                      |   2%|==                                                                      |   2%|==                                                                      |   3%|==                                                                      |   3%|==                                                                      |   3%|==                                                                      |   3%|==                                                              |   4%    1 MB|==                                                              |   4%    1 MB|===                                                             |   4%    1 MB|===                                                             |   4%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   5%    1 MB|===                                                             |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   6%    1 MB|====                                                            |   7%    1 MB|====                                                            |   7%    1 MB|====                                                            |   7%    1 MB|=====                                                           |   7%    1 MB|=====                                                           |   7%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   8%    2 MB|=====                                                           |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |   9%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|======                                                          |  10%    2 MB|=======                                                         |  10%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    2 MB|=======                                                         |  11%    3 MB|=======                                                         |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  12%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|========                                                        |  13%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  14%    3 MB|=========                                                       |  15%    3 MB|==========                                                      |  15%    3 MB|==========                                                      |  15%    3 MB|==========                                                      |  15%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|==========                                                      |  16%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  17%    4 MB|===========                                                     |  18%    4 MB|===========                                                     |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  18%    4 MB|============                                                    |  19%    4 MB|============                                                    |  19%    4 MB|============                                                    |  19%    5 MB|============                                                    |  19%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  20%    5 MB|=============                                                   |  21%    5 MB|=============                                                   |  21%    5 MB|==============                                                  |  21%    5 MB|==============                                                  |  21%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|==============                                                  |  22%    5 MB|===============                                                 |  23%    5 MB|===============                                                 |  23%    5 MB|===============                                                 |  23%    6 MB|===============                                                 |  23%    6 MB|===============                                                 |  24%    6 MB|===============                                                 |  24%    6 MB|===============                                                 |  24%    6 MB|================                                                |  24%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  25%    6 MB|================                                                |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  26%    6 MB|=================                                               |  27%    6 MB|=================                                               |  27%    6 MB|=================                                               |  27%    7 MB|==================                                              |  27%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  28%    7 MB|==================                                              |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  29%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|===================                                             |  30%    7 MB|====================                                            |  30%    7 MB|====================                                            |  31%    7 MB|====================                                            |  31%    7 MB|====================                                            |  31%    8 MB|====================                                            |  31%    8 MB|====================                                            |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  32%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|=====================                                           |  33%    8 MB|======================                                          |  33%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  34%    8 MB|======================                                          |  35%    8 MB|=======================                                         |  35%    8 MB|=======================                                         |  35%    9 MB|=======================                                         |  35%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|=======================                                         |  36%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  37%    9 MB|========================                                        |  38%    9 MB|========================                                        |  38%    9 MB|=========================                                       |  38%    9 MB|=========================                                       |  38%    9 MB|=========================                                       |  39%    9 MB|=========================                                       |  39%   10 MB|=========================                                       |  39%   10 MB|=========================                                       |  39%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  40%   10 MB|==========================                                      |  41%   10 MB|==========================                                      |  41%   10 MB|===========================                                     |  41%   10 MB|===========================                                     |  41%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|===========================                                     |  42%   10 MB|============================                                    |  43%   10 MB|============================                                    |  43%   11 MB|============================                                    |  43%   11 MB|============================                                    |  43%   11 MB|============================                                    |  44%   11 MB|============================                                    |  44%   11 MB|============================                                    |  44%   11 MB|=============================                                   |  44%   11 MB|=============================                                   |  44%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  45%   11 MB|=============================                                   |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  46%   11 MB|==============================                                  |  47%   11 MB|==============================                                  |  47%   12 MB|==============================                                  |  47%   12 MB|===============================                                 |  47%   12 MB|===============================                                 |  47%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  48%   12 MB|===============================                                 |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  49%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|================================                                |  50%   12 MB|=================================                               |  50%   12 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  51%   13 MB|=================================                               |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  52%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|==================================                              |  53%   13 MB|===================================                             |  53%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  54%   13 MB|===================================                             |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  55%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|====================================                            |  56%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  57%   14 MB|=====================================                           |  58%   14 MB|=====================================                           |  58%   14 MB|======================================                          |  58%   14 MB|======================================                          |  58%   14 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|======================================                          |  59%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  60%   15 MB|=======================================                         |  61%   15 MB|=======================================                         |  61%   15 MB|=======================================                         |  61%   15 MB|========================================                        |  61%   15 MB|========================================                        |  61%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|========================================                        |  62%   15 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  63%   16 MB|=========================================                       |  64%   16 MB|=========================================                       |  64%   16 MB|=========================================                       |  64%   16 MB|==========================================                      |  64%   16 MB|==========================================                      |  64%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  65%   16 MB|==========================================                      |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  66%   16 MB|===========================================                     |  67%   17 MB|===========================================                     |  67%   17 MB|===========================================                     |  67%   17 MB|============================================                    |  67%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  68%   17 MB|============================================                    |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  69%   17 MB|=============================================                   |  70%   17 MB|=============================================                   |  70%   17 MB|=============================================                   |  70%   17 MB|==============================================                  |  70%   17 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  71%   18 MB|==============================================                  |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  72%   18 MB|===============================================                 |  73%   18 MB|===============================================                 |  73%   18 MB|===============================================                 |  73%   18 MB|================================================                |  73%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   18 MB|================================================                |  74%   19 MB|================================================                |  75%   19 MB|================================================                |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  75%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|=================================================               |  76%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  77%   19 MB|==================================================              |  78%   19 MB|==================================================              |  78%   19 MB|===================================================             |  78%   19 MB|===================================================             |  78%   20 MB|===================================================             |  78%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|===================================================             |  79%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  80%   20 MB|====================================================            |  81%   20 MB|====================================================            |  81%   20 MB|=====================================================           |  81%   20 MB|=====================================================           |  81%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   20 MB|=====================================================           |  82%   21 MB|=====================================================           |  82%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  83%   21 MB|======================================================          |  84%   21 MB|======================================================          |  84%   21 MB|======================================================          |  84%   21 MB|=======================================================         |  84%   21 MB|=======================================================         |  84%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|=======================================================         |  85%   21 MB|========================================================        |  86%   21 MB|========================================================        |  86%   21 MB|========================================================        |  86%   22 MB|========================================================        |  86%   22 MB|========================================================        |  87%   22 MB|========================================================        |  87%   22 MB|========================================================        |  87%   22 MB|=========================================================       |  87%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  88%   22 MB|=========================================================       |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  89%   22 MB|==========================================================      |  90%   22 MB|==========================================================      |  90%   22 MB|==========================================================      |  90%   23 MB|===========================================================     |  90%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  91%   23 MB|===========================================================     |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  92%   23 MB|============================================================    |  93%   23 MB|============================================================    |  93%   23 MB|============================================================    |  93%   23 MB|=============================================================   |  93%   23 MB|=============================================================   |  94%   23 MB|=============================================================   |  94%   23 MB|=============================================================   |  94%   24 MB|=============================================================   |  94%   24 MB|=============================================================   |  94%   24 MB|=============================================================   |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  95%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|==============================================================  |  96%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  97%   24 MB|=============================================================== |  98%   24 MB|=============================================================== |  98%   24 MB|================================================================|  98%   25 MB|================================================================|  98%   25 MB|================================================================|  98%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|================================================================|  99%   25 MB|=================================================================| 100%   25 MB
+> peaks
+GRanges object with 428426 ranges and 3 metadata columns:
+           seqnames               ranges strand |     score      qval
+              <Rle>            <IRanges>  <Rle> | <numeric> <numeric>
+       [1]     chr1   [4332190, 4332689]      * |       419   4.39160
+       [2]     chr1   [4332399, 4332898]      * |       419  12.18106
+       [3]     chr1   [4332406, 4332905]      * |       460  10.57160
+       [4]     chr1   [4416656, 4417155]      * |       584  23.91399
+       [5]     chr1   [4417782, 4418281]      * |       486  11.46668
+       ...      ...                  ...    ... .       ...       ...
+  [428422]     chrY [90740850, 90741349]      * |       783  27.97365
+  [428423]     chrY [90741152, 90741651]      * |       424   0.64668
+  [428424]     chrY [90741359, 90741858]      * |       424   6.05310
+  [428425]     chrY [90740872, 90741371]      * |       424  10.76508
+  [428426]     chrY [90740860, 90741359]      * |       435  11.77139
+                  name
+           <character>
+       [1]           .
+       [2]           .
+       [3]           .
+       [4]           .
+       [5]           .
+       ...         ...
+  [428422]           .
+  [428423]           .
+  [428424]           .
+  [428425]           .
+  [428426]           .
+  -------
+  seqinfo: 21 sequences from an unspecified genome; no seqlengths
+> 
+> clp1 <- "/public/groups/forsberglab/atac_libraries/clp/ATAC34_CLP_CFEM026_S9_R1_001.merged.nodup.bam"
+> clp2 <- "/public/groups/forsberglab/atac_libraries/clp/cfjk017_R1.trim.merged.nodup.bam"
+> cmp1 <- "/public/groups/forsberglab/atac_libraries/cmp/em013_cat_R1.trim.merged.nodup.bam"
+> cmp2 <- "/public/groups/forsberglab/atac_libraries/cmp/jk004_cat_R1.trim.merged.nodup.bam"
+> gmp1 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+> gmp2 <- "/public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam"
+> hsc1 <- "/public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam"
+> hsc2 <- "/public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam"
+> mep1 <- "/public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam"
+> mep2 <- "/public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam"
+> mpp1 <- "/public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam"
+> mpp2 <- "/public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam"
+> prob1 <- "/public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam"
+> prob2 <- "/public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prot1 <- "/public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> prot2 <- "/public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam"
+> nbam <-c(hsc1,hsc2,mpp1,mpp2,cmp1,cmp2,gmp1,gmp2,mep1,mep2,clp1,clp2,prob1,prob2,prot1,prot2)
+> peak_counts <- getCounts(inbam, peaks, by_rg = FALSE, format = "bam", paired = TRUE,
++ colData = DataFrame(celltype = c("HSC","HSC","MPP","MPP","CMP","CMP","GMP","GMP","MEP","MEP","CLP","CLP","ProB","ProB","ProT","ProT")))
+Error in matrix(nrow = length(peaks), ncol = length(bams)) : 
+  object 'inbam' not found
+> inbam <-c(hsc1,hsc2,mpp1,mpp2,cmp1,cmp2,gmp1,gmp2,mep1,mep2,clp1,clp2,prob1,prob2,prot1,prot2)
+> peak_counts <- getCounts(inbam, peaks, by_rg = FALSE, format = "bam", paired = TRUE,
++ colData = DataFrame(celltype = c("HSC","HSC","MPP","MPP","CMP","CMP","GMP","GMP","MEP","MEP","CLP","CLP","ProB","ProB","ProT","ProT")))
+Reading in file: /public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/cmp/em013_cat_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/cmp/jk004_cat_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/clp/ATAC34_CLP_CFEM026_S9_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/clp/cfjk017_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+Error in `rownames<-`(`*tmp*`, value = c("jk009_allcat_R1.merged.nodup.bam",  : 
+  duplicate rownames not allowed
+> ls()
+ [1] "clp1"     "clp2"     "cmp1"     "cmp2"     "gmp1"     "gmp2"    
+ [7] "hsc1"     "hsc2"     "inbam"    "mep1"     "mep2"     "mpp1"    
+[13] "mpp2"     "nbam"     "peakfile" "peaks"    "prob1"    "prob2"   
+[19] "prot1"    "prot2"   
+> rownames(peaks)
+NULL
+> rownames(peaks)"):peaks")[1Ppeaks")"peaks")
+NULL
+> rownames("peaks")[C[C[K
+> rownames("peaks")[C[C[Kq()n
+Error: unexpected symbol in "q()n"
+> q()
+Save workspace image? [y/n/c]: n
+(base) bash-4.2$ R34bash chromvar.sh 
+
+Loading required package: methods
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+Parsed with column specification:
+cols(
+  chr = [31mcol_character()[39m,
+  start = [32mcol_double()[39m,
+  end = [32mcol_double()[39m,
+  name = [31mcol_character()[39m,
+  score = [32mcol_double()[39m,
+  strand = [31mcol_character()[39m,
+  fc = [32mcol_double()[39m,
+  pval = [32mcol_double()[39m,
+  qval = [32mcol_double()[39m,
+  summit = [32mcol_double()[39m
+)
+GRanges object with 428426 ranges and 3 metadata columns:
+           seqnames               ranges strand |     score      qval
+              <Rle>            <IRanges>  <Rle> | <numeric> <numeric>
+       [1]     chr1   [4332190, 4332689]      * |       419   4.39160
+       [2]     chr1   [4332399, 4332898]      * |       419  12.18106
+       [3]     chr1   [4332406, 4332905]      * |       460  10.57160
+       [4]     chr1   [4416656, 4417155]      * |       584  23.91399
+       [5]     chr1   [4417782, 4418281]      * |       486  11.46668
+       ...      ...                  ...    ... .       ...       ...
+  [428422]     chrY [90740850, 90741349]      * |       783  27.97365
+  [428423]     chrY [90741152, 90741651]      * |       424   0.64668
+  [428424]     chrY [90741359, 90741858]      * |       424   6.05310
+  [428425]     chrY [90740872, 90741371]      * |       424  10.76508
+  [428426]     chrY [90740860, 90741359]      * |       435  11.77139
+                  name
+           <character>
+       [1]           .
+       [2]           .
+       [3]           .
+       [4]           .
+       [5]           .
+       ...         ...
+  [428422]           .
+  [428423]           .
+  [428424]           .
+  [428425]           .
+  [428426]           .
+  -------
+  seqinfo: 21 sequences from an unspecified genome; no seqlengths
+Reading in file: /public/groups/forsberglab/atac_libraries/hsc/jk009_allcat_R1.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/hsc/rs003.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mpp/ATAC33_MPP_CFEM024_S7_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mpp/rs004.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/cmp/em013_cat_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/cmp/jk004_cat_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/gmp/em012_cat_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/gmp/ATAC33_GMP_CFEM025_S8_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mep/em014_cat_R1.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/mep/em020.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/clp/ATAC34_CLP_CFEM026_S9_R1_001.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/clp/cfjk017_R1.trim.merged.nodup.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prob/ATAC35_ProB_CFEM029_S10_R1_001.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prob/jk006_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prot/em007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+Reading in file: /public/groups/forsberglab/atac_libraries/prot/jk007_cat_R1.trim.merged.nodup.no_chrM_MT.bam
+
+Loading required package: methods
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+Annotations not provided, so chromVAR being run on individual peaks...
+Perplexity given too high
+Setting perplexity to 5
+Error in gzfile(file, "wb") : cannot open the connection
+Calls: save -> gzfile
+In addition: Warning message:
+In gzfile(file, "wb") :
+  cannot open compressed file '/public/groups/forsberglab/211129_chromvar_pros/cor_211129.Rdata', probable reason 'No such file or directory'
+Execution halted
+(base) bash-4.2$ ls
+211129_dev_cor.R     chromvar.sh		   hsc_pros_peaklist_211129.txt   idr_hsc_pros_211129_peaks_sorted.bed	screenlog.0	   variability_211129.Rdata
+211129_peakcounts.R  filtered_counts_211129.Rdata  idr_hsc_pros_211129_peaks.bed  peaks_dev_211129.Rdata		tsne_211129.Rdata
+(base) bash-4.2$ R34
+
+R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(chromVAR)
+
+> library(motifmatchr)
+> library(Matrix)
+> library(SummarizedExperiment)
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:Matrix’:
+
+    colMeans, colSums, rowMeans, rowSums, which
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colMeans, colnames,
+    colSums, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, lengths, Map, mapply, match,
+    mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:Matrix’:
+
+    expand
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: ‘matrixStats’
+
+The following objects are masked from ‘package:Biobase’:
+
+    anyMissing, rowMedians
+
+
+Attaching package: ‘DelayedArray’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following object is masked from ‘package:base’:
+
+    apply
+
+> library(BiocParallel)
+> set.seed(2017)
+> library(BSgenome.Mmusculus.UCSC.mm10)
+Loading required package: BSgenome
+Loading required package: Biostrings
+Loading required package: XVector
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:DelayedArray’:
+
+    type
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: rtracklayer
+> register(SerialParam())
+> lop[Kad(file = "/public/groups/forsberglab/atac_analysis/211129_chromvar_pros/variability_211129.Rdata")
+> cor_211129 <- getSampleCorrelation(peaks_dev_211129)
+Error in is(object, "chromVARDeviations") : 
+  object 'peaks_dev_211129' not found
+> ls()
+[1] "peaks_variability_211129"
+> rm(peaks_variability_211129kk[K[K)
+> load(file=file = "/public/groups/forsberglab/atac_analysis/211129_chromvar_pros/peaks_dev_211129.Rdata")[1P[1P[1P[1P[1P
+> load(file = "/public/groups/forsberglab/atac_analysis/211129_chromvar_pros/peaks_dev_211129.Rdata")[C[Crm(peaks_variability_211129)[K[C[Cls()[K[C[Ccor_211129 <- getSampleCorrelation(peaks_dev_211129)
+> save(cor_211129, file = "/public/groups/forsberglab/211129_chromvar_pros/cor_211129.Rdata")
+Error in gzfile(file, "wb") : cannot open the connection
+In addition: Warning message:
+In gzfile(file, "wb") :
+  cannot open compressed file '/public/groups/forsberglab/211129_chromvar_pros/cor_211129.Rdata', probable reason 'No such file or directory'
+> save(cor_211129, file = "/public/groups/forsberglab/atac_analysis/211129_chromvar_pros/cor_211129.Rdata")
+> q()
+Save workspace image? [y/n/c]: n
+(base) bash-4.2$ exit
+exit
